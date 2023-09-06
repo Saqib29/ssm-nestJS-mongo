@@ -12,6 +12,7 @@ import { Lesson } from './lesson/lesson.entity';
     TypeOrmModule.forRoot({
       type: 'mongodb',
       url: process.env.MONGO_DB_URL,
+      database: "School",
       synchronize: true,
       useUnifiedTopology: true,
       entities: [Lesson],
