@@ -1,4 +1,4 @@
 # ssm-nestJS-mongo
 
 ### conection string with docker mongoDb 
-mongodb://<username>:<password>@localhost:<port>/?authSource=admin
+mongodb://USERNAME:PASSWORD@localhost:PORT/?authSource=admin
