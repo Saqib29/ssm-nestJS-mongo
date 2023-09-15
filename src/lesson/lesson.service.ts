@@ -25,9 +25,16 @@ export class LessonService {
             id: uuid(),
             name,
             startDate,
-            endDate
+            endDate,
         });
 
+        return this.lessonRepository.save(lesson);
+    }
+
+    
+    async assignStudentsToLesson(lessonId: string, studentIds: string[]): Promise<Lesson> {
+        const lesson = await this.lessonRepository.findOne({ where: { id: lessonId } })
+        lesson.students = lesson.students ? [...lesson.students , ...studentIds] : [...studentIds];
         return this.lessonRepository.save(lesson);
     }
 }
